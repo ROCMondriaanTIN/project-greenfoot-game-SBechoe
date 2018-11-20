@@ -9,7 +9,7 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     
-    private int leven = 5;
+    private int leven = 3;
     private int score = 0;
     
     GreenfootImage gold = new GreenfootImage("coinGold.png");
@@ -69,6 +69,7 @@ public class Hero extends Mover {
         }
         //Dood gaan ing door spikes
         for (Actor spikes : getIntersectingObjects(Spikes.class)) {
+            leven-=1;
             if (spikes != null) {
                 this.setLocation(164, 1406);
                 setImage("p1.png");
