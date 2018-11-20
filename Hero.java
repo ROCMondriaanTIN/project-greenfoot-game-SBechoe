@@ -38,6 +38,7 @@ public class Hero extends Mover {
         getWorld().showText("Aantal Levens: "+leven, 90 , 20);
         getWorld().showText("Score: "+score, 52  , 50);
         handleInput();
+        offSide();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -141,6 +142,14 @@ public class Hero extends Mover {
 
     public int getHeight() {
         return getImage().getHeight();
+    }
+    
+    public void offSide()
+    {
+        if(this.isAtEdge()==true)
+        {
+            this.setLocation(164, 1406);
+        }
     }
     
     public boolean onGround(){
