@@ -12,5 +12,5 @@ public class Gold extends Coin
     public void act() 
     {
         applyVelocity();
-    }    
+    } 
 }

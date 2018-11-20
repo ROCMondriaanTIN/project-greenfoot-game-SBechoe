@@ -118,7 +118,7 @@ public class Hero extends Mover {
                 newImage.mirrorHorizontally();
                 setImage(newImage);
             }
-            
+        
         } else if (Greenfoot.isKeyDown("right")) {
             velocityX = 5;
             if (onGround()==false){

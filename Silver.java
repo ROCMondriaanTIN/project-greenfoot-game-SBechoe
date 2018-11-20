@@ -11,5 +11,13 @@ public class Silver extends Coin
     public void act() 
     {
         applyVelocity();
-    }    
+        //removeCoin();
+    }
+    
+    public void removeCoin()
+    {
+        if(getWorld().getObjects(Gold.class).size()== 0){
+            setImage("bomb.png");
+        }
+    }
 }
