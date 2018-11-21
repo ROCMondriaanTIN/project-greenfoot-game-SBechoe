@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -8,9 +7,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class Gold extends Coin
-{   
+{   public boolean isGepakt;
+    public Gold(boolean isGepakt)
+    {
+        this.isGepakt = isGepakt;
+    }
+    
     public void act() 
     {
-        applyVelocity();
-    }    
+        if(isGepakt==false)
+        {
+            applyVelocity();
+        }
+    } 
 }

@@ -8,8 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Silver extends Coin
 {
+    public boolean isGepakt;
+    public Silver(boolean isGepakt)
+    {
+        this.isGepakt = isGepakt;
+    }
+    
     public void act() 
     {
-        applyVelocity();
-    }    
+        if(isGepakt==false)
+        {
+            applyVelocity();
+        }
+    }
 }
