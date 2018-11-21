@@ -14,6 +14,15 @@ public class DoorTop extends Mover
      */
     public void act() 
     {
-        // Add your action code here.
+       applyVelocity();
+       setImage("door_closedTop.png");
+       openDoorTop();
     }    
+    
+    public void openDoorTop()
+    {
+       if(getWorld().getObjects(Key.class).size()== 0){
+            setImage("door_openTop.png");
+        }
+    }
 }

@@ -8,43 +8,46 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    
+        
     private int leven = 3;
-    private int score = 0;
     
-    GreenfootImage gold = new GreenfootImage("coinGold.png");
-    GreenfootImage silver = new GreenfootImage("coinSilver.png");
+    private int currentImage = 0;
+    private GreenfootImage jump;
     private GreenfootImage image = getImage();
     private String[] walkingPlayerImg =     {"p1_walk01.png", "p1_walk02.png", "p1_walk03.png", "p1_walk04.png", "p1_walk05.png", "p1_walk06.png", "p1_walk07.png", "p1_walk08.png",
                                                 "p1_walk09.png", "p1_walk10.png", "p1_walk11.png"};
-    private int currentImage = 0;
-    private GreenfootImage jump;
-    
+    Scoreboard sb; 
 
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        
+                
         setImage("p1.png");
         getImage().scale(50, 70);
-       
+
         jump = new GreenfootImage ("p1_front.png");
     }
-  
+    
     @Override
     public void act() {
-        getWorld().showText("Aantal Levens: "+leven, 90 , 20);
-        getWorld().showText("Score: "+score, 52  , 50);
+        if(sb == null){
+            sb = new Scoreboard();
+            getWorld().addObject(sb, -10, -10);
+            sb.checkKey();
+        }
+        
         handleInput();
         offSide();
+        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        applyVelocity();   
+        applyVelocity(); 
+        
         //Dood gaan door enemy
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             leven-=1;
@@ -82,16 +85,23 @@ public class Hero extends Mover {
                 if (this.isTouching(Gold.class)){
                     Actor goud = getOneIntersectingObject(Gold.class);  
                     getWorld().removeObject(goud);
-                    
-                    updateScoreGold();
+                    sb.updateScoreGold();
                     break;
                 }else if (this.isTouching(Silver.class)){
                     Actor zilver = getOneIntersectingObject(Silver.class);  
                     getWorld().removeObject(zilver);
-                    
-                    updateScoreSilver();
+                    sb.updateScoreSilver();
                     break;
                 }
+            }
+        }
+        //Sleutel pakken
+        for (Actor keys : getIntersectingObjects(Key.class)) {
+            if (keys != null) {
+                Actor key = getOneIntersectingObject(Key.class);  
+                getWorld().removeObject(key);
+                sb.checkKey();
+                break;
             }
         }
     }
@@ -157,17 +167,5 @@ public class Hero extends Mover {
         Actor platform = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
         return platform!= null;
     }
-    
-    public void updateScoreGold()
-    {
-        score +=2; 
-        
-        //getWorld().drawImage(gold, 100, 60);
-        
-    }
-    
-    public void updateScoreSilver()
-    {
-        score++;
-    }
+
 }

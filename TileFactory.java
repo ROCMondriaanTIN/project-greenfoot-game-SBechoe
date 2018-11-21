@@ -103,6 +103,7 @@ public class TileFactory {
                 break;
             case 25:
                 tile = new Spikes("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                tile.getImage().rotate(90);
                 break;
             case 26:
                 tile = new Tile("cactus.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
