@@ -12,7 +12,7 @@ public class Scoreboard extends Actor
     {
        updateLife();
     } 
-    
+
     public void updateLife()
     {
         if(score==20){

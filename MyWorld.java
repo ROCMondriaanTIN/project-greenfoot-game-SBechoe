@@ -73,6 +73,7 @@ public class MyWorld extends World {
         addObject(camera, 0, 0);
         addObject(hero, 180, 1370);        
         addObject(new Enemy(), 1190, 410);  
+        
         addObject(new Gold(false), 397, 1406);
         addObject(new Silver(false), 597, 1296);
         addObject(new Silver(false), 940, 1150);

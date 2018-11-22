@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Gold extends Coin
 {   public boolean isGepakt;
+    
     public Gold(boolean isGepakt)
     {
         this.isGepakt = isGepakt;
