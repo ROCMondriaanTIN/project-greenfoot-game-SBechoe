@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class Level1 extends World {
 
     //public Scoreboard sb;
     private CollisionEngine ce;
@@ -12,10 +12,10 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public Level1() {
         // Create a new world with 1700x900 cells with a cell size of 1x1 pixels.
-        super(1700, 900, 1, false);
-        //super(1000, 500, 1, false);
+        //super(1700, 900, 1, false);
+        super(1000, 500, 1, false);
         this.setBackground("BG1.png");
 
         int[][] mapOnder = {
@@ -79,7 +79,7 @@ public class MyWorld extends World {
         addObject(new Silver(false), 940, 1150);
         addObject(new Silver(false), 897, 1296);
         addObject(new Silver(false), 1040, 1150);
-        addObject(new Key(), 2322, 1568);
+        addObject(new Key(false), 2322, 1568);
         addObject(new DoorTop(),180,444);
         addObject(new DoorBottom(),180,506);
 

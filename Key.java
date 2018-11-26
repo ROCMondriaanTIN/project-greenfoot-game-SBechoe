@@ -8,9 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Key extends Mover
 {
+    public boolean isGepakt;
+    
+    public Key(boolean isGepakt)
+    {
+        this.isGepakt = isGepakt;
+    }
+    
     public void act() 
     {
-        applyVelocity();
-        setImage("hud_keyGreen.png");
+        if(isGepakt==false)
+        {
+            setImage("hud_keyGreen.png");
+            applyVelocity();
+        }
+        
+        //setImage("hud_keyGreem_disabled.png");
     }    
 }

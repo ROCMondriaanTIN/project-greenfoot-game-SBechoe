@@ -7,10 +7,10 @@ public class Scoreboard extends Actor
     private int xPositieLife = 30;
     private int score = 0;
     private int leven = 2;
-    
+
     public void act() 
     {
-       updateLife();
+        updateLife();
     } 
 
     public void updateLife()
@@ -21,18 +21,22 @@ public class Scoreboard extends Actor
            xPositieLife+=50;
            score = 0;
         }
+        
+        /*if(leven == 0){
+            Greenfoot.setWorld(new GameOver());
+        }*/
     }
     
     public void checkKey()
     {
         if(getWorld().getObjects(Key.class).size()== 0){
-            getWorld().addObject(new HudKeyClosed(), 30, 90);
+            getWorld().addObject(new Key(false), 30, 90);            
         }else{
-            getWorld().addObject(new HudKeyOpen(), 30, 90);
+            getWorld().addObject(new Key(true), 2322, 1568);
         }
     }
     
-    public void updateScoreSilver()
+    public void updateScoreSilver()  
     {
        score++;
        getWorld().addObject(new Silver(true), xPositieSilver, 140);

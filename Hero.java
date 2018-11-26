@@ -40,6 +40,7 @@ public class Hero extends Mover {
         
         handleInput();
         offSide();
+        sb.checkKey();
         
         velocityX *= drag;
         velocityY += acc;
@@ -50,7 +51,6 @@ public class Hero extends Mover {
         
         //Dood gaan door enemy
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            leven-=1;
             if (enemy != null) {
                 this.setLocation(164, 1406);
                 setImage("p1.png");
@@ -59,11 +59,7 @@ public class Hero extends Mover {
         }
         //Dood gaan door water
         for (Actor waterTile : getIntersectingObjects(WaterTile.class)) {
-            leven-=1;
             if (waterTile != null){
-                if (leven == 0){
-                    Greenfoot.setWorld(new GameOver());
-                }
                 this.setLocation(164, 1406);
                 setImage("p1.png");
                 break;
@@ -72,7 +68,6 @@ public class Hero extends Mover {
         }
         //Dood gaan ing door spikes
         for (Actor spikes : getIntersectingObjects(Spikes.class)) {
-            leven-=1;
             if (spikes != null) {
                 this.setLocation(164, 1406);
                 setImage("p1.png");
@@ -107,7 +102,6 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        
         if (Greenfoot.isKeyDown("space")/*&&onGround()*/) {
             velocityY = -15;    
             setImage(jump);
@@ -159,7 +153,8 @@ public class Hero extends Mover {
     {
         if(this.isAtEdge()==true)
         {
-            this.setLocation(164, 1406);
+            leven -=1;
+            this.setLocation(180, 1406);
         }
     }
     

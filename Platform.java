@@ -12,6 +12,7 @@ public class Platform extends Tile
     {
         super(image, width, height);
     }
+    
     public void act() 
     {
         // Add your action code here.
