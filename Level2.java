@@ -80,7 +80,7 @@ public class Level2 extends World {
         addObject(new Silver(false), 940, 1150);
         addObject(new Silver(false), 897, 1296);
         addObject(new Silver(false), 1040, 1150);
-        addObject(new Key(false), 2322, 1568);
+        addObject(new Key(), 2322, 1568);
         addObject(new DoorTop(),180,444);
         addObject(new DoorBottom(),180,506);
 

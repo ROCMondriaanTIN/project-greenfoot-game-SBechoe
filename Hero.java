@@ -9,7 +9,7 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
         
-    private int leven = 3;
+    private int leven = 2;
     
     private int currentImage = 0;
     private GreenfootImage jump;
@@ -36,11 +36,11 @@ public class Hero extends Mover {
             sb = new Scoreboard();
             getWorld().addObject(sb, -10, -10);
             sb.checkKey();
+            sb.updateLife();
         }
         
         handleInput();
         offSide();
-        sb.checkKey();
         
         velocityX *= drag;
         velocityY += acc;
@@ -157,7 +157,7 @@ public class Hero extends Mover {
             this.setLocation(180, 1406);
         }
     }
-    
+   
     public boolean onGround(){
         Actor platform = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
         return platform!= null;
