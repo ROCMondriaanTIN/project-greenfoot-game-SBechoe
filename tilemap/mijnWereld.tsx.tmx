@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.0" name="mijnWereld" tilewidth="70" tileheight="70" tilecount="27" columns="0">
+<tileset version="1.2" tiledversion="1.2.1" name="mijnWereld" tilewidth="70" tileheight="70" tilecount="29" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="1">
   <image width="70" height="70" source="../images/liquidWaterTop_mid.png"/>
@@ -81,5 +81,11 @@
  </tile>
  <tile id="27">
   <image width="70" height="70" source="../images/bush.png"/>
+ </tile>
+ <tile id="32">
+  <image width="70" height="70" source="../images/grassCliffLeftAlt.png"/>
+ </tile>
+ <tile id="33">
+  <image width="70" height="70" source="../images/grassCliffRightAlt.png"/>
  </tile>
 </tileset>
