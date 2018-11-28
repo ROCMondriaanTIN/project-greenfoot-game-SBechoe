@@ -5,8 +5,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author R. Springer
  */
 public class TestLevel extends World {
-
-    //public Scoreboard sb;
     private CollisionEngine ce;
     /**
      * Constructor for objects of class MyWorld.
@@ -56,17 +54,18 @@ public class TestLevel extends World {
         addObject(hero, 120, 612);        
         addObject(new Enemy(), 1190, 650);  
         
-        addObject(new Gold(false), 300, 700);
+        //addObject(new Gold(false), 300, 700);
         addObject(new Silver(false), 380, 700);
         addObject(new Silver(false), 480, 700);
         addObject(new Silver(false), 580, 700);
         addObject(new Silver(false), 680, 700);
         addObject(new Silver(false), 780, 700);
         addObject(new Silver(false), 880, 700);
-        addObject(new Silver(false), 980, 700);
         
         addObject(new Key(), 300, 400); 
         addObject(new KeyHud(), 30, 90);
+        
+        addObject(new CharacterCoinBlue(), 300, 600);
         
         addObject(new LifeHud(), 30, 40);
         addObject(new LifeHud(), 80, 40);        
