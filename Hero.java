@@ -18,7 +18,7 @@
                                             "p1_walk06.png", "p1_walk07.png", "p1_walk08.png","p1_walk09.png", "p1_walk10.png", "p1_walk11.png"};
         Scoreboard sb; 
         
-        private int charStatus = 1;
+        private int charStatus;
        
         public Hero() {
             super();
