@@ -14,8 +14,8 @@ public class Level2 extends World {
      */
     public Level2() {
         // Create a new world with 1700x900 cells with a cell size of 1x1 pixels.
-        super(1700, 900, 1, false);
-        //super(1000, 500, 1, false);
+        //super(1700, 900, 1, false);
+        super(1000, 900, 1, false);
         this.setBackground("BG1.png");
 
         int[][] mapOnder = {
